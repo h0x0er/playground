@@ -21,7 +21,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: h0x0er/harden-runner@agent-mitm
-      - run: file /usr/local/bin
+      - run: file /usr/local/bin/mitmdump
       - run: curl https://google.com/django
 
       - run: cat "/tmp/mitm-logs"
