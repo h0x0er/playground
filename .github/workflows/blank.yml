@@ -21,13 +21,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: h0x0er/harden-runner@agent-mitm
-      # - run: sudo cp /home/mitmproxyuser/.mitmproxy/mitmproxy-ca-cert.cer /usr/local/share/ca-certificates/mitmproxy-ca-cert.crt;sudo update-ca-certificates
+      - run: sudo cp /home/mitmproxyuser/.mitmproxy/mitmproxy-ca-cert.cer /usr/local/share/ca-certificates/mitmproxy-ca-cert.crt;sudo update-ca-certificates
       - run: file /usr/local/bin/mitmdump
       - run: ls -lah /home/mitmproxyuser
       - run: cat /home/mitmproxyuser/interceptor.py
       - run: sudo iptables -L
 
-      - run: curl https://google.com/django
+      - run: curl https://tango.com/django
       - run: cat "/tmp/mitm-logs"
       - run: cat "/tmp/blocked-paths"
      
