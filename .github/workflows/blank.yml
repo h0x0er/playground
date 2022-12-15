@@ -27,7 +27,7 @@ jobs:
       - run: cat /home/mitmproxyuser/interceptor.py
       - run: sudo iptables -L
 
-      - run: curl https://tango.com/django
+      - run: curl https://tango.com/ -L
       - run: cat "/tmp/mitm-logs"
       - run: cat "/tmp/blocked-paths"
      
