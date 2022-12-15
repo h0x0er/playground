@@ -24,7 +24,7 @@ jobs:
         with:
           egress-policy: audit
       # - run: file /usr/local/bin/mitmdump
-      - run: getenv
+      - run: env
       - run: ls -lah /home/mitmproxyuser
       # - run: sudo cp /home/mitmproxyuser/.mitmproxy/mitmproxy-ca-cert.cer /usr/local/share/ca-certificates/mitmproxy-ca-cert.crt;sudo update-ca-certificates
 
