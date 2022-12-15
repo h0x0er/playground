@@ -23,9 +23,10 @@ jobs:
       - uses: h0x0er/harden-runner@agent-mitm
         with:
           egress-policy: audit
-      - run: sudo cp /home/mitmproxyuser/.mitmproxy/mitmproxy-ca-cert.cer /usr/local/share/ca-certificates/mitmproxy-ca-cert.crt;sudo update-ca-certificates
       # - run: file /usr/local/bin/mitmdump
-      # - run: ls -lah /home/mitmproxyuser
+      - run: ls -lah /home/mitmproxyuser
+      - run: sudo cp /home/mitmproxyuser/.mitmproxy/mitmproxy-ca-cert.cer /usr/local/share/ca-certificates/mitmproxy-ca-cert.crt;sudo update-ca-certificates
+
       # - run: cat /home/mitmproxyuser/interceptor.py
       - run: sudo iptables -L
 
