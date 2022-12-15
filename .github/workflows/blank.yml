@@ -24,7 +24,7 @@ jobs:
       - run: file /usr/local/bin/mitmdump
       - run: ls -lah /home/mitmproxyuser
       - run: cat /home/mitmproxyuser/interceptor.py
-            - run: sudo iptables -L
+      - run: sudo iptables -L
 
       - run: curl https://google.com/django
       - run: cat "/tmp/mitm-logs"
