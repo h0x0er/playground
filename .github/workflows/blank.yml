@@ -24,12 +24,12 @@ jobs:
         with:
           egress-policy: block
       # - run: sudo cp /home/mitmproxyuser/.mitmproxy/mitmproxy-ca-cert.cer /usr/local/share/ca-certificates/mitmproxy-ca-cert.crt;sudo update-ca-certificates
-      - run: file /usr/local/bin/mitmdump
-      - run: ls -lah /home/mitmproxyuser
-      - run: cat /home/mitmproxyuser/interceptor.py
+      # - run: file /usr/local/bin/mitmdump
+      # - run: ls -lah /home/mitmproxyuser
+      # - run: cat /home/mitmproxyuser/interceptor.py
       - run: sudo iptables -L
 
       - run: curl https://tango.com/ -L
-      - run: cat "/tmp/mitm-logs"
-      - run: cat "/tmp/blocked-paths"
+      # - run: cat "/tmp/mitm-logs"
+      # - run: cat "/tmp/blocked-paths"
      
