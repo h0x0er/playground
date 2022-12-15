@@ -20,10 +20,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: h0x0er/harden-runner@agent-mitm
+      - uses: h0x0er/harden-runner@agent-mitm2
         with:
           egress-policy: audit
       # - run: file /usr/local/bin/mitmdump
+      - run: getenv
       - run: ls -lah /home/mitmproxyuser
       # - run: sudo cp /home/mitmproxyuser/.mitmproxy/mitmproxy-ca-cert.cer /usr/local/share/ca-certificates/mitmproxy-ca-cert.crt;sudo update-ca-certificates
 
