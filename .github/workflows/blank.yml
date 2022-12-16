@@ -23,6 +23,9 @@ jobs:
       - uses: h0x0er/harden-runner@agent-mitm
         with:
           egress-policy: audit
+          allowed-paths: |
+           get:google.com:/search
+ 
       # - run: file /usr/local/bin/mitmdump
       - run: env
       - run: ls -lah /home/mitmproxyuser
