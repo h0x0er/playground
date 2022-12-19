@@ -25,8 +25,6 @@ jobs:
           egress-policy: block
           allowed-endpoints: |
             google.com:443
-          allowed-paths: |
-            get:google.com:/search
           
 #       - run: for x in `pidof mitmdump`; do sudo kill $x; done
 #       - run: sudo -u mitmproxyuser -H sh -c '/usr/local/bin/mitmdump --mode transparent -s /home/mitmproxyuser/interceptor.py&'
@@ -34,6 +32,7 @@ jobs:
 
       - run: cat /home/mitmproxyuser/interceptor.py
       - run: curl https://google.com/django -L
+      - run: curl https://google.com/search -L
       - run: cat "/tmp/mitm-logs"
       - run: cat "/tmp/blocked-paths"
      
