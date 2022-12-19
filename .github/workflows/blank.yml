@@ -23,14 +23,15 @@ jobs:
       - uses: h0x0er/harden-runner@agent-mitm 
         with:
           egress-policy: audit
+          allowed-paths: |
+            "get:google.com:/search"
           
-      - run: for x in `pidof mitmdump`; do sudo kill $x; done
-      
-      - run: sudo -u mitmproxyuser -H sh -c '/usr/local/bin/mitmdump --mode transparent -s /home/mitmproxyuser/interceptor.py&'
+#       - run: for x in `pidof mitmdump`; do sudo kill $x; done
+#       - run: sudo -u mitmproxyuser -H sh -c '/usr/local/bin/mitmdump --mode transparent -s /home/mitmproxyuser/interceptor.py&'
       - run: ls -lah /home/mitmproxyuser
 
       - run: cat /home/mitmproxyuser/interceptor.py
-      - run: curl https://tango.com/ -L
+      - run: curl https://google.com/django -L
       - run: cat "/tmp/mitm-logs"
       # - run: cat "/tmp/blocked-paths"
      
