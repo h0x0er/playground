@@ -20,9 +20,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: h0x0er/harden-runner@agent-mitm
-
- 
+      - uses: h0x0er/harden-runner@agent-mitm 
+        with:
+          egress-policy: audit
       # - run: file /usr/local/bin/mitmdump
       - run: env
       - run: ls -lah /home/mitmproxyuser
