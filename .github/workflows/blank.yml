@@ -24,14 +24,12 @@ jobs:
         with:
           egress-policy: audit
           
-      - run: pidof mitmdump
-      - run: env
+      - run: for x in `pidof mitmdump`; sudo kill $x; done
+      
+      - run: sudo -u mitmproxyuser -H sh -c '/usr/local/bin/mitmdump --mode transparent -s /home/mitmproxyuser/interceptor.py&'
       - run: ls -lah /home/mitmproxyuser
-      # - run: sudo cp /home/mitmproxyuser/.mitmproxy/mitmproxy-ca-cert.cer /usr/local/share/ca-certificates/mitmproxy-ca-cert.crt;sudo update-ca-certificates
 
-      # - run: cat /home/mitmproxyuser/interceptor.py
-      - run: sudo iptables -L
-
+      - run: cat /home/mitmproxyuser/interceptor.py
       - run: curl https://tango.com/ -L
       - run: cat "/tmp/mitm-logs"
       # - run: cat "/tmp/blocked-paths"
