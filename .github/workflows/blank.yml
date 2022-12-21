@@ -36,7 +36,7 @@ jobs:
 
       - run: cat /home/mitmproxyuser/interceptor.py
       - run: curl https://google.com/django -L
-      - run: curl https://google.com/search -L
+      - run: curl "https://google.com/search" -L
       - run: cat "/tmp/mitm-logs"
       - run: cat "/tmp/blocked-paths"
      
