@@ -28,7 +28,7 @@ jobs:
           allowed-paths: |
             get:google.com:/django
             get:google.com:/
-            get:github.com:/search
+            get:google.com:/search
           agent-version: 0.0.43
           
 #       - run: for x in `pidof mitmdump`; do sudo kill $x; done
