@@ -35,7 +35,7 @@ jobs:
 #       - run: sudo -u mitmproxyuser -H sh -c '/usr/local/bin/mitmdump --mode transparent -s /home/mitmproxyuser/interceptor.py&'
       - run: ls -lah /home/mitmproxyuser
       - run: ls /home/agent/
-      - run: ls /home/agent/agent.json
+      - run: cat /home/agent/agent.json
 
       - run: cat /home/mitmproxyuser/interceptor.py
       - run: curl https://google.com/ -L
