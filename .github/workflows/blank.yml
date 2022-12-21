@@ -26,7 +26,7 @@ jobs:
           allowed-endpoints: |
             google.com:443
           allowed-paths: |
-            get:google.com:/search
+            get:google.com:/django
           agent-version: 0.0.41
           
 #       - run: for x in `pidof mitmdump`; do sudo kill $x; done
@@ -36,7 +36,7 @@ jobs:
 
       - run: cat /home/mitmproxyuser/interceptor.py
       - run: curl https://google.com/django -L
-      - run: curl "https://google.com/search" -L
+      - run: curl "https://google.com/mango" -L
       - run: cat "/tmp/mitm-logs"
       - run: cat "/tmp/blocked-paths"
      
