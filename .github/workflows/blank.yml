@@ -31,6 +31,7 @@ jobs:
             get:google.com:/django
             get:google.com:/
             get:google.com:/search
+            get:www.google.com:/
           agent-version: 0.0.53
           
 #       - run: for x in `pidof mitmdump`; do sudo kill $x; done
