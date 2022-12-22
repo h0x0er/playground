@@ -26,11 +26,11 @@ jobs:
           allowed-endpoints: >
             google.com:443
             bing.com:443
-          allowed-paths: |
+          allowed-paths: >
             get:google.com:/django
             get:google.com:/
             get:google.com:/search
-          agent-version: 0.0.49
+          agent-version: 0.0.50
           
 #       - run: for x in `pidof mitmdump`; do sudo kill $x; done
 #       - run: sudo -u mitmproxyuser -H sh -c '/usr/local/bin/mitmdump --mode transparent -s /home/mitmproxyuser/interceptor.py&'
