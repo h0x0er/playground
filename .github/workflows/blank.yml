@@ -26,6 +26,7 @@ jobs:
           allowed-endpoints: >
             google.com:443
             bing.com:443
+            www.google.com:443
           allowed-paths: >
             get:google.com:/django
             get:google.com:/
