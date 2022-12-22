@@ -22,7 +22,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: h0x0er/harden-runner@agent-mitm 
         with:
-          egress-policy: block
+          egress-policy: audit
           allowed-endpoints: |
             google.com:443
             bing.com:443
