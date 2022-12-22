@@ -23,7 +23,7 @@ jobs:
       - uses: h0x0er/harden-runner@agent-mitm 
         with:
           egress-policy: block
-          allowed-endpoints: |
+          allowed-endpoints: >
             google.com:443
             bing.com:443
           allowed-paths: |
