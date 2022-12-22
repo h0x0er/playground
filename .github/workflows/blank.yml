@@ -22,14 +22,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: h0x0er/harden-runner@agent-mitm 
         with:
-          egress-policy: audit
+          egress-policy: block
           allowed-endpoints: |
             google.com:443
             bing.com:443
-#           allowed-paths: |
-#             get:google.com:/django
-#             get:google.com:/
-#             get:google.com:/search
+          allowed-paths: |
+            get:google.com:/django
+            get:google.com:/
+            get:google.com:/search
           agent-version: 0.0.48
           
 #       - run: for x in `pidof mitmdump`; do sudo kill $x; done
