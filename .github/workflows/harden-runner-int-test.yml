@@ -16,7 +16,6 @@ jobs:
           api.github.com:443
         agent-version: 0.0.55
         
-    - run: sudo killall -9 agent 
     - uses: actions/checkout@v3
     - run: sleep 20
     - run: curl -X GET https://www.google.com
