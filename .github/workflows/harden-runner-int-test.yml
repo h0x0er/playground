@@ -4,6 +4,7 @@ on:
 jobs:
   block22:
     runs-on: ubuntu-22.04
+    timeout-minutes: 5
     steps:
     - name: Harden Runner
       uses: h0x0er/harden-runner@agent-mitm
@@ -50,6 +51,7 @@ jobs:
 #     - run: curl -X GET https://www.microsoft.com/en-us/
   audit22:
     runs-on: ubuntu-22.04
+    timeout-minutes: 5
     steps:
     - name: Harden Runner
       uses: h0x0er/harden-runner@agent-mitm
