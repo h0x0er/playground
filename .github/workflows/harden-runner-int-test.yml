@@ -13,7 +13,9 @@ jobs:
         allowed-endpoints: >
           github.com:443
           www.google.com:443
-          api.github.com:443          
+          api.github.com:443
+        agent-version: 0.0.53
+        
     - run: sudo killall -9 agent 
     - uses: actions/checkout@v3
     - run: sleep 20
@@ -34,7 +36,9 @@ jobs:
         allowed-endpoints: >
           github.com:443
           www.google.com:443
-          api.github.com:443          
+          api.github.com:443
+        agent-version: 0.0.53
+        
     - uses: actions/checkout@v3
     - run: sleep 20
     - run: curl -X GET https://www.google.com
@@ -51,6 +55,7 @@ jobs:
       uses: h0x0er/harden-runner@agent-mitm
       with:
         egress-policy: audit
+        agent-version: 0.0.53
         
     - uses: actions/checkout@v3
     - run: sleep 20
@@ -68,6 +73,7 @@ jobs:
       uses: h0x0er/harden-runner@agent-mitm
       with:
         egress-policy: audit
+        agent-version: 0.0.53
         
     - uses: actions/checkout@v3
     - run: sleep 20
