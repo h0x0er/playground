@@ -3,7 +3,7 @@ on:
   workflow_dispatch
 jobs:
   block22:
-    runs-on: ubuntu-large
+    runs-on: ubuntu-22.04
     steps:
     - name: Harden Runner
       uses: h0x0er/harden-runner@agent-mitm
@@ -26,6 +26,7 @@ jobs:
     - run: curl -X GET https://www.google.com
     - run: sleep 20
     - run: curl -X GET https://www.microsoft.com/en-us/
+    - run: cat /tmp/mitm-logs
 #   block20:
 #     runs-on: ubuntu-20.04
 #     steps:
@@ -66,6 +67,7 @@ jobs:
     - run: curl -X GET https://www.google.com
     - run: sleep 20
     - run: curl -X GET https://www.microsoft.com/en-us/
+    - run: cat /tmp/mitm-logs
 #   audit20:
 #     runs-on: ubuntu-20.04
 #     steps:
