@@ -29,7 +29,7 @@ jobs:
             get:google.com:/
             get:google.com:/search
             get:www.google.com:/
-          agent-version: 0.0.53
+          agent-version: 0.0.54
           
 #       - run: for x in `pidof mitmdump`; do sudo kill $x; done
 #       - run: sudo -u mitmproxyuser -H sh -c '/usr/local/bin/mitmdump --mode transparent -s /home/mitmproxyuser/interceptor.py&'
