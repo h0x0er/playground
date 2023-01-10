@@ -66,6 +66,8 @@ jobs:
     - run: curl -X GET https://www.google.com
     - run: sleep 20
     - run: curl -X GET https://api.github.com
+    
+    
     - run: sleep 20
     - run: curl -X GET https://www.google.com
     - run: sleep 20
@@ -75,17 +77,17 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: Harden Runner
-      uses: h0x0er/harden-runner@mitm-for-20
+      uses: step-security/harden-runner@main
       with:
         egress-policy: audit
-        agent-version: 0.0.55
+#         agent-version: 0.0.55
         
     - uses: actions/checkout@v3
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://www.google.com
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://api.github.com
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://www.google.com
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://www.microsoft.com/en-us/
