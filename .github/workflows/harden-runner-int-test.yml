@@ -77,10 +77,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@main
+      uses: h0x0er/harden-runner@agent-mitm
       with:
         egress-policy: audit
-#         agent-version: 0.0.55
+        agent-version: 0.0.57
         
     - uses: actions/checkout@v3
 #     - run: sleep 20
