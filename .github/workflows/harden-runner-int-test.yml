@@ -17,16 +17,16 @@ jobs:
           api.github.com:443
         allowed-paths: >
           get:www.google.com:/
-        agent-version: 0.0.55
+        agent-version: 0.0.57
         
     - uses: actions/checkout@v3
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://www.google.com
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://api.github.com
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://www.google.com
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://www.microsoft.com/en-us/
     - run: cat /tmp/mitm-logs
   block20:
@@ -45,14 +45,15 @@ jobs:
         agent-version: 0.0.57
         
     - uses: actions/checkout@v3
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://www.google.com
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://api.github.com
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://www.google.com
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://www.microsoft.com/en-us/
+    - run: cat /tmp/mitm-logs
   audit22:
     runs-on: ubuntu-22.04
     timeout-minutes: 5
@@ -61,18 +62,18 @@ jobs:
       uses: h0x0er/harden-runner@agent-mitm
       with:
         egress-policy: audit
-        agent-version: 0.0.55
+        agent-version: 0.0.57
         
     - uses: actions/checkout@v3
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://www.google.com
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://api.github.com
     
     
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://www.google.com
-    - run: sleep 20
+#     - run: sleep 20
     - run: curl -X GET https://www.microsoft.com/en-us/
     - run: cat /tmp/mitm-logs
   audit20:
