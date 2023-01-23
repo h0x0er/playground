@@ -20,7 +20,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: h0x0er/harden-runner@agent-mitm 
         with:
-          egress-policy: block
+          egress-policy: audit
           allowed-endpoints: >
             google.com:443
             bing.com:443
@@ -30,7 +30,7 @@ jobs:
             get:google.com:/
             get:google.com:/search
             get:www.google.com:/
-          agent-version: 0.0.55
+          agent-version: 0.0.58
           
 #       - run: for x in `pidof mitmdump`; do sudo kill $x; done
 #       - run: sudo -u mitmproxyuser -H sh -c '/usr/local/bin/mitmdump --mode transparent -s /home/mitmproxyuser/interceptor.py&'
