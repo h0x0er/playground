@@ -21,5 +21,5 @@ jobs:
       with:
         egress-policy: block
        
-    - run: nc -u 8.8.8.8 53
+    - run: nc -u 8.8.8.8 53 &
 
