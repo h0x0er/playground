@@ -22,6 +22,6 @@ jobs:
         uses: h0x0er/harden-runner@test-issue789
         with:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
-          disable_telemetry: true
+          disable-telemetry: true
 
       - run: docker pull mcr.microsoft.com/dotnet/aspnet:7.0@sha256:debec27f5579ddee99c2fd5616ee18def873aa83ad68e7b563c222162099fda5
