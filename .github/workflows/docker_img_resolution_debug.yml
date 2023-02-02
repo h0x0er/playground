@@ -19,9 +19,21 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
  
-      - name: Harden Runner
-        uses: step-security/harden-runner@v2
+#       - name: Harden Runner
+#         uses: step-security/harden-runner@v2
+#         with:
+#           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+      - uses: h0x0er/harden-runner@agent-mitm 
         with:
-          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
-
+          egress-policy: audit
+#           allowed-endpoints: >
+#             google.com:443
+#             bing.com:443
+#             www.google.com:443
+#           allowed-paths: >
+#             get:google.com:/django
+#             get:google.com:/
+#             get:google.com:/search
+#             get:www.google.com:/
+          agent-version: 0.0.58
       - run: docker pull mcr.microsoft.com/dotnet/aspnet:7.0@sha256:debec27f5579ddee99c2fd5616ee18def873aa83ad68e7b563c222162099fda5
