@@ -1,4 +1,4 @@
-name: FetchPolicy
+name: fetch
 
 # Controls when the workflow will run
 on:
