@@ -20,18 +20,6 @@ jobs:
         with:
           policy: policy1
           
-#       - run: for x in `pidof mitmdump`; do sudo kill $x; done
-#       - run: sudo -u mitmproxyuser -H sh -c '/usr/local/bin/mitmdump --mode transparent -s /home/mitmproxyuser/interceptor.py&'
-#       - run: ls -lah /home/mitmproxyuser
-#       - run: ls /home/agent/
-#       - run: cat /home/agent/agent.json
-#       - run: cat /home/agent/agent.status
-
-#       - run: cat /home/mitmproxyuser/interceptor.py
-# #       - run: curl "https://bing.com/" -L
-#       - run: curl "https://google.com/search" -Lv
-# #       - run: cat "/tmp/mitm-logs"
-#       - run: cat "/tmp/blocked-paths"
-        - run: curl https://google.com
+      - run: curl https://google.com
 
         
