@@ -18,7 +18,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: h0x0er/harden-runner@policy-from-api
         with:
-          policy: policy2
+          policy: policy3
           
       - run: curl https://google.com
 
