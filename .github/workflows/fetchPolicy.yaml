@@ -1,0 +1,37 @@
+name: FetchPolicy
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: h0x0er/harden-runner@ policy-from-api 
+        with:
+          policy: policy1
+          
+#       - run: for x in `pidof mitmdump`; do sudo kill $x; done
+#       - run: sudo -u mitmproxyuser -H sh -c '/usr/local/bin/mitmdump --mode transparent -s /home/mitmproxyuser/interceptor.py&'
+#       - run: ls -lah /home/mitmproxyuser
+#       - run: ls /home/agent/
+#       - run: cat /home/agent/agent.json
+#       - run: cat /home/agent/agent.status
+
+#       - run: cat /home/mitmproxyuser/interceptor.py
+# #       - run: curl "https://bing.com/" -L
+#       - run: curl "https://google.com/search" -Lv
+# #       - run: cat "/tmp/mitm-logs"
+#       - run: cat "/tmp/blocked-paths"
+        - run: curl https://google.com
+
+        
