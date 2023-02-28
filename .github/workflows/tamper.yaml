@@ -1,4 +1,4 @@
-name: Test and coverage
+name: Tamper
 
 on: [workflow_dispatch]
 
