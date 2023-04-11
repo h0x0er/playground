@@ -20,7 +20,9 @@ jobs:
         uses: step-security/harden-runner@03bee3930647ebbf994244c21ddbc0d4933aab4f # v2.3.0
         with:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
-          
-      - run: sudo apt-get update && sudo apt-get install -y   wget   curl   git   dos2unix   software-properties-common
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - run: docker build .
           
     
