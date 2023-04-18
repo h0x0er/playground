@@ -21,10 +21,10 @@ jobs:
         with:
           egress-policy: block
           allowed-endpoints: >
-            google.com:443
             *.google.com:443
-          agent-version: 968.0.3
+          agent-version: 968.0.4
           release-repo: h0x0er/agent
 
           
       - run: curl "https://maps.google.com"
+      - run: curl "https://play.google.com"
