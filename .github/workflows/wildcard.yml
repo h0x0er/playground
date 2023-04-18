@@ -1,0 +1,29 @@
+
+name: WildCard
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  wildcard:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: h0x0er/harden-runner@test 
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            google.com:443
+            *.google.com:443
+          agent-version: 968.0.1
+
+          
+      - run: curl "https://maps.google.com"
