@@ -23,7 +23,7 @@ jobs:
           allowed-endpoints: >
             google.com:443
             *.google.com:443
-          agent-version: 968.0.1
+          agent-version: 968.0.2
           release-repo: h0x0er/agent
 
           
