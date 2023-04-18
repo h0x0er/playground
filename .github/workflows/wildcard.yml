@@ -17,13 +17,14 @@ jobs:
     steps:
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: h0x0er/harden-runner@test 
+      - uses: h0x0er/harden-runner@debug 
         with:
           egress-policy: block
           allowed-endpoints: >
             google.com:443
             *.google.com:443
           agent-version: 968.0.1
+          release-repo: h0x0er/agent
 
           
       - run: curl "https://maps.google.com"
