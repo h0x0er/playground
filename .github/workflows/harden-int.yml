@@ -19,7 +19,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: step-security/harden-runner@int 
         with:
-          egress-policy: audit
+          egress-policy: block
 
           
       - run: curl "https://maps.google.com"
