@@ -1,4 +1,4 @@
-name: Recurring INT tests
+name: Mitm Recurring INT tests
 on:
   workflow_dispatch:
 
