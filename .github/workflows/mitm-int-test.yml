@@ -14,7 +14,7 @@ jobs:
       uses: h0x0er/harden-runner@mitm-int
       with:
         disable-sudo: false
-        egress-policy: audit
+        egress-policy: block
         allowed-endpoints: >
           github.com:443
           www.google.com:443
@@ -22,5 +22,5 @@ jobs:
         allowed-paths: >
           get:www.google.com:/
         
-
+    - run: curl "https://www.google.com/" -L
     - run: curl "https://www.google.com/search" -L
