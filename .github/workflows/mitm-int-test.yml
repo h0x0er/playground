@@ -1,0 +1,26 @@
+name: Mitm INT Test
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+      
+jobs:
+  mitm-int-test:
+    name: mitm inte test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Harden Runner
+      uses: h0x0er/harden-runner@mitm-int
+      with:
+        disable-sudo: false
+        egress-policy: audit
+        allowed-endpoints: >
+          github.com:443
+          www.google.com:443
+          api.github.com:443
+        allowed-paths: >
+          get:www.google.com:/
+        
+
+    - run: curl "https://www.google.com/search" -L
