@@ -1,0 +1,22 @@
+name: Mitm INT Audit Test
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+      
+jobs:
+  mitm-int-audit-test:
+    name: mitm int audit test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Harden Runner
+      uses: h0x0er/harden-runner@mitm-int
+      with:
+        disable-sudo: false
+        egress-policy: audit
+        
+    - run: curl "https://www.google.com/" -L
+    - run: curl "https://www.google.com/search" -L
+    - run: curl "https://www.microsoft.com/" -L
+    - run: curl "https://bing.com/search" -L
