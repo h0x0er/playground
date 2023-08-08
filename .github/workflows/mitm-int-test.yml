@@ -7,7 +7,7 @@ permissions:
       
 jobs:
   mitm-int-test:
-    name: mitm inte test
+    name: mitm int test
     runs-on: ubuntu-latest
     steps:
     - name: Harden Runner
