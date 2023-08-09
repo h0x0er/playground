@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - run: ls /home/runner/work/_temp/_github_home
+    - run: ls /home/runner/work/
