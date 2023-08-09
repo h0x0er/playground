@@ -17,4 +17,4 @@ jobs:
         egress-policy: audit
         
     - run: cat ~/.docker/config.json
-    - run: sudo docker exec alpine ls -lah
+    - run: sudo docker run alpine ls
