@@ -1,0 +1,14 @@
+name: Dir Browse
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+      
+jobs:
+  DirBrowse:
+    name: dir browse
+    runs-on: ubuntu-latest
+    steps:
+
+    - run: ls /home/runner/work/_temp/_github_home
