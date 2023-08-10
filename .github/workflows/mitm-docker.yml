@@ -17,7 +17,7 @@ jobs:
         egress-policy: audit
         
     - run: cat ~/.docker/config.json
-    - run: netstat -ltp
+    - run: sudo netstat -ltp
     - run: sudo docker pull alpine/curl
     - run: sudo docker ps
     - run: sudo docker run alpine cat /etc/default/docker
