@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
 WORKDIR /app
 COPY . .
-RUN "apt-get update && apt-get install -y wget curl git dos2unix software-properties-common"
+RUN "ls"
 CMD ["/bin/ls"]
