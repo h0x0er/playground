@@ -18,4 +18,6 @@ jobs:
         
     - run: cat ~/.docker/config.json
     - run: sudo docker pull alpine/curl
+    - run: sudo docker ps
+    - run: sudo docker run ubuntu env
     - run: sudo docker run alpine/curl https://google.com
