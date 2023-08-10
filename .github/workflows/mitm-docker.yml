@@ -20,5 +20,5 @@ jobs:
     - run: sudo netstat -ltp
     - run: sudo docker pull alpine/curl
     - run: sudo docker ps
-    - run: sudo docker run alpine cat /etc/default/docker
+    - run: sudo cat /etc/default/docker
     - run: sudo docker run alpine/curl https://google.com
