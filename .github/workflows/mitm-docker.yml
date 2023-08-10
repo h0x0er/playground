@@ -19,5 +19,5 @@ jobs:
     - run: cat ~/.docker/config.json
     - run: sudo netstat -ltp
     - run: sudo docker pull alpine/curl
-    - run: sudo docker alpine pwd
+    - run: sudo docker run alpine pwd
     - run: sudo docker run alpine/curl https://google.com
