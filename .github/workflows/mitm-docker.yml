@@ -18,4 +18,5 @@ jobs:
         
     - run: cat ~/.docker/config.json
     - run: sudo docker pull alpine/curl
-    - run: sudo docker build -t testbuild .
+    - run: ls -lah
+    # - run: sudo docker build -t testbuild .
