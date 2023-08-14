@@ -1,0 +1,24 @@
+name: Mitm Block Mode
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+      
+jobs:
+  mitm-block:
+    name: mitm block
+    runs-on: ubuntu-latest
+    steps:
+    - name: Harden Runner
+      uses: h0x0er/harden-runner@mitm-int
+      with:
+        disable-sudo: false
+        egress-policy: block
+        allowed-endpoints: >
+            github.com:443
+        allowed-paths: >
+            get:github.com:/h0x0er/playground
+
+    - run: curl https://github.com/h0x0er/playground -L
+    - run: curl https://github.com/h0x0er/harden-runner -L
