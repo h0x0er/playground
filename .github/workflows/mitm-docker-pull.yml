@@ -1,4 +1,4 @@
-name: Mitm Docker Build
+name: Mitm Docker Pull
 on:
   workflow_dispatch:
 
@@ -16,4 +16,5 @@ jobs:
         disable-sudo: false
         egress-policy: audit
     - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
-    - run: sudo docker build -t testbuild .
+    - run: sudo docker pull alpine/curl
+
