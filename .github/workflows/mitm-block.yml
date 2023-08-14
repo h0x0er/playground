@@ -21,4 +21,6 @@ jobs:
             get:github.com:/h0x0er/playground
 
     - run: curl https://github.com/h0x0er/playground -L
+    
+    # Call to github.com/h0x0er/harden-runner will get blocked
     - run: curl https://github.com/h0x0er/harden-runner -L
