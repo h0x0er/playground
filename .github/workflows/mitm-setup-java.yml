@@ -4,6 +4,10 @@ on:
 
 permissions:
   contents: read
+
+
+env:
+  SSL_CERT_DIR: "/home/mitmproxyuser/.mitmproxy/"
       
 jobs:
   mitm-setup-java:
