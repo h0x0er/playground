@@ -7,7 +7,7 @@ permissions:
 
 
 env:
-  SSL_CERT_DIR: "/home/mitmproxyuser/.mitmproxy/"
+  # SSL_CERT_DIR: "/home/mitmproxyuser/.mitmproxy/"
       
 jobs:
   mitm-setup-java:
