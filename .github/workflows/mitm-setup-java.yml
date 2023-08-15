@@ -13,7 +13,6 @@ jobs:
     - name: Harden Runner
       uses: h0x0er/harden-runner@mitm-int
       with:
-        disable-sudo: false
         egress-policy: audit
 
     - name: Set up JDK 17
