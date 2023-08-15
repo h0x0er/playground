@@ -17,6 +17,7 @@ jobs:
         egress-policy: block
         allowed-endpoints: >
             github.com:443
+            acghubeus2.actions.githubusercontent.com:443
         allowed-paths: >
             get:github.com:/h0x0er/playground
 
