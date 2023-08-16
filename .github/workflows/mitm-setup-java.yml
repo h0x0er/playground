@@ -24,6 +24,6 @@ jobs:
     #   with:
     #     distribution: 'zulu'
     #     java-version: 17
-    - run: ls /home/agent/.mitmproxy
+    - run: ls /home/agent/
     - run: ls /usr/local/bin
     - run: curl https://cdn.azul.com/zulu/bin/zulu17.44.17-ca-crac-jdk17.0.8-linux_x64.tar.gz 
