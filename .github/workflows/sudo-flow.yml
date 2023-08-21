@@ -23,6 +23,6 @@ jobs:
     - run: sudo usermod -aG sudo agent
     - run: sudo cat /etc/sudoers
     - run: sudo cp /etc/sudoers /tmp/sudoers.bak 
-    - run: sudo echo "agent ALL=(ALL) NOPASSWD:ALL" | (EDITOR="tee -a" visudo)'
+    - run: sudo echo "agent ALL=(ALL) NOPASSWD:ALL" | (EDITOR="tee -a" visudo)
 
  
