@@ -21,6 +21,7 @@ jobs:
     - run: sudo mkdir /home/agent
     - run: sudo chown -R agent /home/agent
     - run: sudo usermod -aG sudo agent
+    - run: sudo cat /etc/sudoers
     - run: sudo cp /etc/sudoers /tmp/sudoers.bak 
     - run: sudo echo "agent ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
