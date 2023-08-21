@@ -1,0 +1,27 @@
+name: Sudo Flow
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+
+# env:
+  # SSL_CERT_DIR: "/home/mitmproxyuser/.mitmproxy/"
+      
+jobs:
+  sudo-flow:
+    name: Sudo Flow
+    runs-on: ubuntu-latest
+    steps:
+
+    - run: ps aux
+
+    - run: sudo useradd agent
+    - run: sudo mkdir /home/agent
+    - run: sudo chown -R agent /home/agent
+    - run: sudo usermod -aG sudo agent
+    - run: sudo cp /etc/sudoers /tmp/sudoers.bak 
+    - run: sudo echo "agent ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+ 
