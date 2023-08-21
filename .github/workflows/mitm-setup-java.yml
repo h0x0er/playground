@@ -23,8 +23,9 @@ jobs:
     - run: dig cloudflare-dns.com
     - run: dig int.api.stepsecurity.io
     - run: cat /etc/ca-certificates.conf
-    # - name: Set up JDK 17
-    #   uses: actions/setup-java@v3
-    #   with:
-    #     distribution: 'zulu'
-    #     java-version: 17
+    - run: sudo ls /usr/local/share/ca-certificates
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: 17
