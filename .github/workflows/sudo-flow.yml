@@ -24,5 +24,6 @@ jobs:
     - run: sudo cat /etc/sudoers
     - run: sudo cp /etc/sudoers /tmp/sudoers.bak 
     - run: sudo echo "agent ALL=(ALL) NOPASSWD:ALL" | (EDITOR="tee -a" sudo visudo)
+    - run: sudo cat /etc/sudoers
 
  
