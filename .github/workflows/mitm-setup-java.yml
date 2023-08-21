@@ -21,6 +21,7 @@ jobs:
     - run: ps aux
     - run: dig dns.google
     - run: dig cloudflare-dns.com
+    - run: dig int.api.stepsecurity.io
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
