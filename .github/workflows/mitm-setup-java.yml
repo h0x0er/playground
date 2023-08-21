@@ -22,9 +22,9 @@ jobs:
     - run: dig dns.google
     - run: dig cloudflare-dns.com
     - run: dig int.api.stepsecurity.io
-    - run: sudo dpkg-reconfigure ca-certificates
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
-      with:
-        distribution: 'zulu'
-        java-version: 17
+    - run: cat /etc/ca-certificates.conf
+    # - name: Set up JDK 17
+    #   uses: actions/setup-java@v3
+    #   with:
+    #     distribution: 'zulu'
+    #     java-version: 17
