@@ -19,11 +19,11 @@ jobs:
       with:
         egress-policy: audit
     - run: ps aux
-    # - name: Set up JDK 17
-    #   uses: actions/setup-java@v3
-    #   with:
-    #     distribution: 'zulu'
-    #     java-version: 17
-    # - run: ls -lah /home/agent/.mitmproxy
-    # - run: ls /usr/local/bin
-    # - run: curl https://cdn.azul.com/zulu/bin/zulu17.44.17-ca-crac-jdk17.0.8-linux_x64.tar.gz 
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: 17
+    - run: ls -lah /home/agent/.mitmproxy
+    - run: ls /usr/local/bin
+    - run: curl https://cdn.azul.com/zulu/bin/zulu17.44.17-ca-crac-jdk17.0.8-linux_x64.tar.gz 
