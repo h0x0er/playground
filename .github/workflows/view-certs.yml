@@ -17,4 +17,5 @@ jobs:
         egress-policy: audit  
 
     # - run: sudo ls /etc/ssl/certs/
+    - run: sudo cat /usr/local/share/ca-certificates/mitmproxy-ca-cert.crt
     - run: sudo cat /etc/ssl/certs/ca-certificates.crt
