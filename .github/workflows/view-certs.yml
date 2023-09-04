@@ -1,0 +1,14 @@
+name: View Certs
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+      
+jobs:
+  mitm-int-audit-test:
+    name: View Certs
+    runs-on: ubuntu-latest
+    steps:
+        
+    - run: sudo ls /etc/ssl/certs/
