@@ -10,6 +10,11 @@ jobs:
     name: View Certs
     runs-on: ubuntu-latest
     steps:
-        
-    - run: sudo ls /etc/ssl/certs/
-    - run: sudo cat /etc/ssl/certs/Amazon_Root_CA_1.pem
+    - name: Harden Runner
+      uses: h0x0er/harden-runner@mitm-int
+      with:
+        disable-sudo: false
+        egress-policy: audit  
+
+    # - run: sudo ls /etc/ssl/certs/
+    - run: sudo cat /etc/ssl/certs/ca-certificates.crt
