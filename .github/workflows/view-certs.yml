@@ -12,3 +12,4 @@ jobs:
     steps:
         
     - run: sudo ls /etc/ssl/certs/
+    - run: sudo cat /etc/ssl/certs/Amazon_Root_CA_1.pem
