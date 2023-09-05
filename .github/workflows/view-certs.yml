@@ -16,6 +16,6 @@ jobs:
         egress-policy: audit  
 
     - run: sudo cat /etc/ca-certificates.conf
-    - run: sudo ls /usr/share/ca-certificates
+    - run: sudo ls /usr/share/ca-certificates -R
     - run: sudo update-ca-certificates -f
     - run: sudo cat /etc/ca-certificates.conf
