@@ -24,11 +24,11 @@ jobs:
     - run: dig cloudflare-dns.com
     - run: dig int.api.stepsecurity.io
     # - run: sudo update-ca-certificates
-    # - run: wget https://cdn.azul.com/zulu/bin/zulu17.44.17-ca-crac-jdk17.0.8-linux_x64.tar.gz
-    - run: cat /etc/ca-certificates.conf
-    - run: sudo ls /usr/local/share/ca-certificates
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
-      with:
-        distribution: 'zulu'
-        java-version: 17
+    - run: wget https://cdn.azul.com/zulu/bin/zulu17.44.17-ca-crac-jdk17.0.8-linux_x64.tar.gz
+    # - run: cat /etc/ca-certificates.conf
+    # - run: sudo ls /usr/local/share/ca-certificates
+    # - name: Set up JDK 17
+    #   uses: actions/setup-java@v3
+    #   with:
+    #     distribution: 'zulu'
+    #     java-version: 17
