@@ -13,8 +13,8 @@ jobs:
     - name: Harden Runner
       uses: h0x0er/harden-runner@mitm-int
       with:
-        disable-sudo: false
         egress-policy: audit  
 
     - run: sudo cat /etc/ca-certificates.conf
-    - run: sudo cat /usr/local/share/ca-certificates/mitmproxy-ca-cert.crt
+    - run: sudo ls /usr/share/ca-certificates
+    - run: sudo cat /usr/share/ca-certificates/mitmproxy-ca-cert.crt
