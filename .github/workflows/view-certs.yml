@@ -17,4 +17,5 @@ jobs:
 
     - run: sudo cat /etc/ca-certificates.conf
     - run: sudo ls /usr/share/ca-certificates
-    - run: sudo cat /usr/share/ca-certificates/mitmproxy-ca-cert.crt
+    - run: sudo update-ca-certificates -f
+    - run: sudo cat /etc/ca-certificates.conf
