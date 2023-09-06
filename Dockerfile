@@ -6,6 +6,9 @@ RUN apk add --update py2-pip
 
 WORKDIR /test
 
+
+RUN env
+
 COPY . .
 
 RUN pip install -r requirements.txt
