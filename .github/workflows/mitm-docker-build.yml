@@ -16,6 +16,7 @@ jobs:
         disable-sudo: false
         egress-policy: audit
     - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+    - run: cat /home/runner/.docker/config.json
     - run: sudo docker build -t testbuild .
 
 
