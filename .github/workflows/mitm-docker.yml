@@ -45,7 +45,7 @@ jobs:
 
 
   docker-build-block-job-fail:
-    name: docker build block fail
+    name: docker build block job fail
     runs-on: ubuntu-latest
     steps:
     - name: Harden Runner
