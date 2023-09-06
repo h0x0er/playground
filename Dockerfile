@@ -4,6 +4,6 @@ COPY . .
 
 RUN "ls"
 
-RUN "pip install -r requirements.txt"
+RUN "python -m pip install -r requirements.txt"
 
 CMD ["/bin/ls"]
