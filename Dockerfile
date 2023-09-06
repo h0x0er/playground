@@ -1,5 +1,8 @@
-FROM ubuntu:14.04
+FROM ubuntu:22.04
 WORKDIR /app
 COPY . .
+
+RUN "pip install -r requirements.txt"
+
 RUN "ls"
 CMD ["/bin/ls"]
