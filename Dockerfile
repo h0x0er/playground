@@ -1,8 +1,8 @@
-FROM ubuntu:22.04
+FROM python:3.11
 WORKDIR /app
 COPY . .
 
-RUN "pip install -r requirements.txt"
+RUN "pip3 install -r requirements.txt"
 
 RUN "ls"
 CMD ["/bin/ls"]
