@@ -37,6 +37,5 @@ jobs:
           registry-1.docker.io:443
         allowed-paths: >
           head:registry-1.docker.io:/v2/alpine/curl/manifests/5.5
-    - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
     - run: sudo docker pull alpine/curl
     - run: sudo docker images ps
