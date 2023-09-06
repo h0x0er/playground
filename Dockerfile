@@ -3,6 +3,7 @@ WORKDIR /app
 COPY . .
 
 RUN "ls"
+RUN "ls /bin"
 
 RUN "python -m pip install 
 
