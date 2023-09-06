@@ -44,7 +44,7 @@ jobs:
     - run: sudo docker build -t testbuild .
 
 
-  docker-build-block-fail:
+  docker-build-block-job-fail:
     name: docker build block fail
     runs-on: ubuntu-latest
     steps:
@@ -66,3 +66,27 @@ jobs:
     - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
     - run: sudo docker build -t testbuild .
 
+  docker-build-block-fail:
+    name: docker build block fail
+    runs-on: ubuntu-latest
+    steps:
+    - name: Harden Runner
+      uses: h0x0er/harden-runner@mitm-int
+      with:
+        egress-policy: block
+        allowed-endpoints: >
+          auth.docker.io:443
+          dl-cdn.alpinelinux.org:80
+          downloads.mitmproxy.org:443
+          files.pythonhosted.org:443
+          github.com:443
+          int.api.stepsecurity.io:443
+          production.cloudflare.docker.com:443
+          pypi.org:443
+          pypi.python.org:443
+          registry-1.docker.io:443
+        allowed-paths: >
+         head:registry-1.docker.io:/v2/library/alpine/manifests/3.4 
+
+    - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+    - run: sudo docker build -t testbuild .
