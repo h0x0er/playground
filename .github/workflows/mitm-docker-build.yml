@@ -18,6 +18,11 @@ jobs:
     - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
     - run: cat /home/runner/.docker/config.json
     - run: cat /etc/docker/daemon.json
+
+    - run: sudo mkdir -p /etc/docker/certs.d/mitmproxy/
+    - run: sudo cp /home/mitmproxyuser/.mitmproxy/mitmproxy-ca-cert.pem /etc/docker/certs.d/mitmproxy/ca.crt
+    - run: sudo service docker restart
+
     - run: sudo docker build -t testbuild .
 
 

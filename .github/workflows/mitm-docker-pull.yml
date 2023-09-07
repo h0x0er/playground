@@ -15,6 +15,9 @@ jobs:
       with:
         disable-sudo: false
         egress-policy: audit
+    - run: sudo mkdir -p /etc/docker/certs.d/mitmproxy/
+    - run: sudo cp ~/.mitmproxy/mitmproxy-ca-cert.pem /etc/docker/certs.d/mitmproxy/ca.crt
+
     - run: sudo service docker restart
     - run: sudo iptables -L
     - run: sudo ifconfig
