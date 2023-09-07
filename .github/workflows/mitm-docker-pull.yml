@@ -20,22 +20,22 @@ jobs:
     - run: sudo docker images ps
 
 
-  mitm-docker-pull-block:
-    name: mitm docker block
-    runs-on: ubuntu-latest
-    steps:
-    - name: Harden Runner
-      uses: h0x0er/harden-runner@mitm-int
-      with:
-        egress-policy: block
-        allowed-endpoints: >
-          auth.docker.io:443
-          downloads.mitmproxy.org:443
-          github.com:443
-          int.api.stepsecurity.io:443
-          production.cloudflare.docker.com:443
-          registry-1.docker.io:443
-        allowed-paths: >
-          head:registry-1.docker.io:/v2/alpine/curl/manifests/5.5
-    - run: sudo docker pull alpine/curl
-    - run: sudo docker images ps
+  # mitm-docker-pull-block:
+  #   name: mitm docker block
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Harden Runner
+  #     uses: h0x0er/harden-runner@mitm-int
+  #     with:
+  #       egress-policy: block
+  #       allowed-endpoints: >
+  #         auth.docker.io:443
+  #         downloads.mitmproxy.org:443
+  #         github.com:443
+  #         int.api.stepsecurity.io:443
+  #         production.cloudflare.docker.com:443
+  #         registry-1.docker.io:443
+  #       allowed-paths: >
+  #         head:registry-1.docker.io:/v2/alpine/curl/manifests/5.5
+  #   - run: sudo docker pull alpine/curl
+  #   - run: sudo docker images ps
