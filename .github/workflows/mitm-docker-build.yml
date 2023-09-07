@@ -23,7 +23,7 @@ jobs:
     - run: sudo cp /home/mitmproxyuser/.mitmproxy/mitmproxy-ca-cert.crt /etc/docker/certs.d/mitmproxy/ca.crt
     - run: sudo ls /etc/docker/certs.d/mitmproxy
     - run: sudo service docker restart
-
+    - run: sleep 5
     - run: sudo docker build -t testbuild .
 
 
