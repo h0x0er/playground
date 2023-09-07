@@ -18,9 +18,9 @@ jobs:
     - run: sudo service docker restart
     - run: sudo iptables -L
     - run: sudo ifconfig
-    - run: sudo netstat
+    - run: sudo netstat -lvp
     - run: curl -v https://www.google.com
-    - run: curl -v http://localhost:8080/
+
     # - run: curl https://registry-1.docker.io/v2/ -v
     # - run: sudo docker pull alpine/curl
     # - run: sudo docker images ps
