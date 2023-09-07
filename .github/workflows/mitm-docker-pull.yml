@@ -19,7 +19,7 @@ jobs:
     - run: sudo iptables -L
     - run: sudo ifconfig
     - run: sudo netstat
-    - run: curl -v https://localhost:8081/
+    - run: curl -v https://localhost:8080/
     - run: curl -v http://localhost8080/
     # - run: curl https://registry-1.docker.io/v2/ -v
     # - run: sudo docker pull alpine/curl
