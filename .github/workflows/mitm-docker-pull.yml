@@ -16,6 +16,7 @@ jobs:
         disable-sudo: false
         egress-policy: audit
     - run: sudo service docker restart
+    - run: iptables -L
     - run: curl https://registry-1.docker.io/v2/ -v
     - run: sudo docker pull alpine/curl
     - run: sudo docker images ps
