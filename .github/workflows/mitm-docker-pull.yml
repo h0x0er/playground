@@ -15,7 +15,7 @@ jobs:
       with:
         disable-sudo: false
         egress-policy: audit
-    - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+    - run: curl https://registry-1.docker.io/v2/ -v
     - run: sudo docker pull alpine/curl
     - run: sudo docker images ps
 
