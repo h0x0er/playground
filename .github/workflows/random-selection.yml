@@ -16,6 +16,8 @@ jobs:
     - run: "deployment_methods=('helm' 'argo');echo 'DEPLOYMENT_METHOD=${deployment_methods[RANDOM%2]}' >> GITHUB_ENV"
     - run: "release_branches=('main' 'int');echo 'RELEASE_BRANCH=${release_branches[RANDOM%2]}' >> GITHUB_ENV"
 
+    - run: env
+
 
   access-envs:
     name: access envs
