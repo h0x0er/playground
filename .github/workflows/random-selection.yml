@@ -1,0 +1,16 @@
+name: Init Envs
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+
+jobs:
+  initialize-envs:
+    name: init envs
+    runs-on: ubuntu-latest
+    steps:
+
+    - run: "cloud_envs=('aws' 'gke');echo ${cloud_envs[RANDOM%3]}"
+ 
