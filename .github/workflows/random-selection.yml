@@ -11,10 +11,12 @@ jobs:
     name: init envs
     runs-on: ubuntu-latest
     steps:
-
-    - run: "cloud_envs=('eks' 'gke');echo CLOUD_ENV=${cloud_envs[RANDOM%2]} >> $GITHUB_ENV"
-    - run: "deployment_methods=('helm' 'argo');echo DEPLOYMENT_METHOD=${deployment_methods[RANDOM%2]} >> $GITHUB_ENV"
-    - run: "release_branches=('main' 'int');echo RELEASE_BRANCH=${release_branches[RANDOM%2]} >> $GITHUB_ENV"
+    
+    - name: Init Variables
+      run: |
+        cloud_envs=('eks' 'gke');echo CLOUD_ENV=${cloud_envs[RANDOM%2]} >> $GITHUB_ENV
+        deployment_methods=('helm' 'argo');echo DEPLOYMENT_METHOD=${deployment_methods[RANDOM%2]} >> $GITHUB_ENV
+        release_branches=('main' 'int');echo RELEASE_BRANCH=${release_branches[RANDOM%2]} >> $GITHUB_ENV"
 
     - run: env
 
