@@ -12,8 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - run: "cloud_envs=('aws' 'gke');echo ${cloud_envs[RANDOM%2]}"
-    - run: "deployment_methods=('helm' 'argo');echo ${deployment_methods[RANDOM%2]}"
-    - run: "release_branches=('main' 'int');echo ${release_branches[RANDOM%2]}"
+    - run: "cloud_envs=('eks' 'gke');echo 'CLOUD_ENV=${cloud_envs[RANDOM%2]}' >> GITHUB_ENV"
+    - run: "deployment_methods=('helm' 'argo');echo 'DEPLOYMENT_METHOD=${deployment_methods[RANDOM%2]}' >> GITHUB_ENV"
+    - run: "release_branches=('main' 'int');echo 'RELEASE_BRANCH=${release_branches[RANDOM%2]}' >> GITHUB_ENV"
 
+
+  access-envs:
+    name: access envs
+    runs-on: ubuntu-latest
+    needs: initialize-envs
+    steps:
+      
+    - run: env
  
