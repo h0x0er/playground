@@ -12,5 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - run: "cloud_envs=('aws' 'gke');echo ${cloud_envs[RANDOM%3]}"
+    - run: "cloud_envs=('aws' 'gke');echo ${cloud_envs[RANDOM%2]}"
+    - run: "deployment_methods=('helm' 'argo');echo ${deployment_methods[RANDOM%2]}"
+    - run: "release_branches=('main' 'int');echo ${release_branches[RANDOM%2]}"
+
  
