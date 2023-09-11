@@ -50,6 +50,14 @@ jobs:
     steps:
     
     - run: env
-     
+
+    - name: if gke
+      if: ${{ env.CLOUD_ENV == 'gke' }}
+      run: echo "env is gke"
+
+    - name: if eks
+      if: ${{ env.CLOUD_ENV == 'eks' }}
+      run: echo "env is eks"
+            
 
         
