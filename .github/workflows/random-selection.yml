@@ -14,6 +14,8 @@ jobs:
     outputs:
       cloud_env: ${{ steps.cloud_env.outputs.CLOUD_ENV }}
       deployment_method: ${{ steps.deployment_method.outputs.DEPLOYMENT_METHOD }}
+      use_argo: ${{ steps.deployment_method.outputs.DEPLOYMENT_METHOD == 'argo' }}
+      instance_type: ${{ steps.cloud_env.outputs.CLOUD_ENV == 'eks' && 't3.large' || 'e2-standard-8'  }}
       release_branch: ${{ steps.release_branch.outputs.RELEASE_BRANCH }}
 
     steps:
@@ -41,10 +43,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: initialize-envs
     env:
+      
       CLOUD_ENV: ${{needs.initialize-envs.outputs.cloud_env}}
-      INSTANCE_TYPE: ${{ needs.initialize-envs.outputs.cloud_env == 'eks' && 't3.large' || 'e2-standard-8' }}
+      INSTANCE_TYPE: ${{ needs.initialize-envs.outputs.instance_type }}
       RELEASE_BRANCH: ${{needs.initialize-envs.outputs.release_branch}}
-      USE_ARGOCD: ${{ needs.initialize-envs.outputs.deployment_method == 'argo' }}
+      USE_ARGOCD: ${{ needs.initialize-envs.outputs.use_argo}}
 
 
     steps:
