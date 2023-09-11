@@ -42,7 +42,7 @@ jobs:
     needs: initialize-envs
     env:
       CLOUD_ENV: ${{needs.initialize-envs.outputs.cloud_env}}
-      DEPLOYMENT_METHOD: ${{needs.initialize-envs.outputs.deployment_method}}
+      INSTANCE_TYPE: ${{ needs.initialize-envs.outputs.cloud_env == 'eks' && 't3.large' || 'e2-standard-8' }}
       RELEASE_BRANCH: ${{needs.initialize-envs.outputs.release_branch}}
       USE_ARGOCD: ${{ needs.initialize-envs.outputs.deployment_method == 'argo' }}
 
