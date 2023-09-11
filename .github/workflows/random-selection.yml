@@ -44,6 +44,7 @@ jobs:
       CLOUD_ENV: ${{needs.initialize-envs.outputs.cloud_env}}
       DEPLOYMENT_METHOD: ${{needs.initialize-envs.outputs.deployment_method}}
       RELEASE_BRANCH: ${{needs.initialize-envs.outputs.release_branch}}
+      USE_ARGOCD: ${{ needs.initialize-envs.outputs.deployment_method == "argo" }}
 
 
     steps:
