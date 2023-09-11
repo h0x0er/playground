@@ -32,10 +32,10 @@ jobs:
       id: release_branch
       run: release_branches=('main' 'int');echo RELEASE_BRANCH=${release_branches[RANDOM%2]} >> "$GITHUB_OUTPUT"
 
+    
         
-        
-
-    - run: env
+    
+    - run: cat $GITHUB_OUTPUT
 
 
   access-envs:
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: initialize-envs
     env:
-      
+
       CLOUD_ENV: ${{needs.initialize-envs.outputs.cloud_env}}
       INSTANCE_TYPE: ${{ needs.initialize-envs.outputs.instance_type }}
       RELEASE_BRANCH: ${{needs.initialize-envs.outputs.release_branch}}
