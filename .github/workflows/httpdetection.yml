@@ -32,4 +32,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - run: curl -XPOST https://api.github.com/repos/alpha/xyz -d "xyz"
-      - run: curl https://www.google.com
+      - run: curl https://www.youtube.com
