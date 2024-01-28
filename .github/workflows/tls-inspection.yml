@@ -23,7 +23,6 @@ jobs:
           egress-policy: block # TODO: change to 'egress-policy: block' after couple of runs
           allowed-endpoints: >
             api.github.com:443
-            int.api.stepsecurity.io:443
             www.google.com:443
 
       # Runs a set of commands using the runners shell
