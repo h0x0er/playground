@@ -1,0 +1,90 @@
+name: Github API Calls
+
+on:
+  workflow_dispatch:
+
+# permissions:
+#   contents: read
+
+jobs:
+    issue-create:
+        permissions:
+            contents: write
+            issues: write
+        if: always()
+        runs-on: ubuntu-latest
+        steps:
+
+          - run: free -m 
+     
+          - uses: h0x0er/harden-runner@token
+            with:
+              egress-policy: audit     
+          - uses: actions/checkout@v3
+          - uses: JasonEtco/create-an-issue@v2
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+          - run: free -m 
+
+    
+    create-pr:
+        permissions:
+          contents: write
+          pull-requests: write
+        if: always()
+        runs-on: ubuntu-latest
+        steps:
+
+          - run: free -m 
+          - uses: h0x0er/harden-runner@token
+            with:
+              egress-policy: audit     
+          - uses: actions/checkout@v4
+          - run: "echo '// changes' >> main.js"
+          - name: Create Pull Request
+            uses: peter-evans/create-pull-request@v5
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          - run: free -m 
+
+    comment-on-pr:
+        permissions:
+          contents: write
+          issues: write
+          pull-requests: write
+        if: always()
+        runs-on: ubuntu-latest
+        steps:
+            
+          - uses: h0x0er/harden-runner@token
+            with:
+             egress-policy: audit     
+          - uses: actions/checkout@v4
+
+          - name: Comment PR
+            uses: thollander/actions-comment-pull-request@v2
+            with:
+             message: |
+              Hello world ! :wave:
+             pr_number: 1
+        
+    dispatch-workflow:
+        permissions:
+          contents: write
+          actions: write
+        if: always()
+        runs-on: ubuntu-latest
+        steps:
+    
+          - run: free -m 
+          - uses: h0x0er/harden-runner@token
+            with:
+              egress-policy: audit   
+          - uses: actions/checkout@v4
+          - name: Invoke workflow without inputs
+            uses: benc-uk/workflow-dispatch@v1
+            with:
+              workflow: enumeration.yml
+          - run: free -m
