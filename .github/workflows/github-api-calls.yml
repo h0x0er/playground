@@ -21,7 +21,7 @@ jobs:
             with:
               egress-policy: audit     
           - uses: actions/checkout@v3
-          - uses: JasonEtco/create-an-issue@token
+          - uses: JasonEtco/create-an-issue@v2
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
@@ -64,7 +64,7 @@ jobs:
           - uses: actions/checkout@v4
 
           - name: Comment PR
-            uses: thollander/actions-comment-pull-request@token
+            uses: thollander/actions-comment-pull-request@v2
             with:
              message: |
               Hello world ! :wave:
