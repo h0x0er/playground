@@ -16,5 +16,5 @@ jobs:
 
       - run: |
          domains=""
-         for x in {1..60}; do curl -XPOST https://api.github.com/$x; done
+         for x in {1..500}; do curl -XPOST https://api.github.com/$x &; done
     
