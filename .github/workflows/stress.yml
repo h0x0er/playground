@@ -15,5 +15,6 @@ jobs:
           egress-policy: audit
 
       - run: |
-         for x in {1..1000}; do curl -XPOST https://api.github.com/; done
+         domains=""
+         for x in {1..60}; do curl -XPOST https://api.github.com/$x; done
     
