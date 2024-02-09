@@ -1,0 +1,16 @@
+name: Enumeration
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  stress-test:
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+
+      - run: |
+         env
+         
+    
