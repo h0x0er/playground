@@ -17,11 +17,11 @@ jobs:
 
           - run: free -m 
      
-          - uses: step-security/harden-runner@v2
+          - uses: h0x0er/harden-runner@token
             with:
               egress-policy: audit     
           - uses: actions/checkout@v3
-          - uses: JasonEtco/create-an-issue@v2
+          - uses: JasonEtco/create-an-issue@token
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
@@ -37,7 +37,7 @@ jobs:
         steps:
 
           - run: free -m 
-          - uses: step-security/harden-runner@v2
+          - uses: h0x0er/harden-runner@token
             with:
               egress-policy: audit     
           - uses: actions/checkout@v4
@@ -58,13 +58,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             
-          - uses: step-security/harden-runner@v2
+          - uses: h0x0er/harden-runner@token
             with:
              egress-policy: audit     
           - uses: actions/checkout@v4
 
           - name: Comment PR
-            uses: thollander/actions-comment-pull-request@v2
+            uses: thollander/actions-comment-pull-request@token
             with:
              message: |
               Hello world ! :wave:
@@ -79,7 +79,7 @@ jobs:
         steps:
     
           - run: free -m 
-          - uses: step-security/harden-runner@v2
+          - uses: h0x0er/harden-runner@token
             with:
               egress-policy: audit   
           - uses: actions/checkout@v4
