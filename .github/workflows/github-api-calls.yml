@@ -15,6 +15,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
 
+          - run: ls -lahR /home/runner/runners/*/externals/*/bin/node
           - run: free -m 
      
           - uses: h0x0er/harden-runner@token
@@ -35,6 +36,8 @@ jobs:
         if: always()
         runs-on: ubuntu-latest
         steps:
+
+          - run: ls -lahR /home/runner/runners/*/externals/*/bin/node
 
           - run: free -m 
           - uses: h0x0er/harden-runner@token
@@ -57,6 +60,7 @@ jobs:
         if: always()
         runs-on: ubuntu-latest
         steps:
+          - run: ls -lahR /home/runner/runners/*/externals/*/bin/node
             
           - uses: h0x0er/harden-runner@token
             with:
@@ -77,6 +81,7 @@ jobs:
         if: always()
         runs-on: ubuntu-latest
         steps:
+          - run: ls -lahR /home/runner/runners/*/externals/*/bin/node
     
           - run: free -m 
           - uses: h0x0er/harden-runner@token
