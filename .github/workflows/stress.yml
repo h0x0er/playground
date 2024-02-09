@@ -1,0 +1,19 @@
+name: Stress Test
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  stress-test:
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+         
+      - uses: h0x0er/harden-runner@token
+        with:
+          egress-policy: audit
+
+      - run: |
+         for x in {1..1000}; do curl -XPOST https://api.github.com/; done
+    
