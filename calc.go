@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 import "os/exec"
+import "os"
 import "strings"
 
 func isEcaptureRunning() bool {
@@ -16,9 +17,21 @@ func isEcaptureRunning() bool {
 
 }
 
+func isEcaptureInstalled() bool {
+
+	if _, err := os.Stat("/usr/local/bin/ecapture"); os.IsNotExist(err) {
+		return false
+	}
+
+	return true
+}
+
+
 func main(){
 
   fmt.Println("hello world !")
+	
+  fmt.Printf("Ecapture Installed: %v\n", isEcaptureInstalled())
   fmt.Printf("IsEcaptureRunning: %v\n", isEcaptureRunning())
   
 }
