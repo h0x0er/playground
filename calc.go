@@ -5,7 +5,7 @@ import "os/exec"
 import "strings"
 
 func isEcaptureRunning() bool {
-	resp, err := exec.Command("/bin/sh", "sudo pidof ecapture").Output()
+	resp, err := exec.Command("/bin/sh","-c" ,"sudo pidof ecapture").Output()
 	if err != nil {
 		fmt.Printf("[Error] %v\n", err)
 		return false
