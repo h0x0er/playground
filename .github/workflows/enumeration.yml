@@ -18,8 +18,8 @@ jobs:
          env
          ls -lahR /home/runner/runners/*/externals/*/bin/*
 
-      - uses: action/setup-go@main
-      - uses: action/checkout@main
+      - uses: actions/setup-go@main
+      - uses: actions/checkout@main
 
       - run: go run main.go
       
