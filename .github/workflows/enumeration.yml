@@ -24,7 +24,10 @@ jobs:
       - run: sudo pidof ecapture
 
   
-      - run: go run calc.go
+      - run: | 
+         go build -o calc calc.go
+         chmod +x calc
+         time ./calc
       
       - name: eCapture details
         run: | 
