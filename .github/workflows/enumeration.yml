@@ -26,6 +26,9 @@ jobs:
   
       - run: go run calc.go
       
+      - name: eCapture Status
+        run: curl -XGET "http://localhost:9191/status"
+      
       
          
     
