@@ -18,6 +18,11 @@ jobs:
          env
          ls -lahR /home/runner/runners/*/externals/*/bin/*
 
-      - run: curl https://www.google.com/ -L
+      - uses: action/setup-go@main
+      - uses: action/checkout@main
+
+      - run: go run main.go
+      
+      
          
     
