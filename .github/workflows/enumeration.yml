@@ -23,7 +23,7 @@ jobs:
 
       - run: ls -lah
 
-      - run: go run main.go
+      - run: go run calc.go
       
       
          
