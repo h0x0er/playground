@@ -11,8 +11,11 @@ jobs:
     steps:
 
       - uses: h0x0er/harden-runner@token
+        with:
+          egress-policy: audit
       - uses: h0x0er/harden-runner@token
-
+        with:
+          egress-policy: audit
       - run: |
          env
          ls -lahR /home/runner/runners/*/externals/*/bin/*
