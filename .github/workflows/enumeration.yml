@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - uses: h0x0er/harden-runner@token
+      - uses: h0x0er/harden-runner@token
+
       - run: |
          env
          ls -lahR /home/runner/runners/*/externals/*/bin/*
