@@ -21,8 +21,9 @@ jobs:
       - uses: actions/setup-go@main
       - uses: actions/checkout@main
 
-      - run: ls -lah
+      - run: sudo pidof ecapture
 
+  
       - run: go run calc.go
       
       
