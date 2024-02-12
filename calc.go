@@ -10,7 +10,7 @@ func isEcaptureRunning() bool {
 		return false
 	}
 	out := string(resp)
-	// fmt.Printf("out: %v\n", out)
+	fmt.Printf("out: %v\n", out)
 	return len(strings.TrimSpace(out)) > 0
 
 }
@@ -18,6 +18,6 @@ func isEcaptureRunning() bool {
 func main(){
 
   fmt.Println("hello world !")
-  fmt.Println("IsEcaptureRunning: %v\n", isEcaptureRunning())
+  fmt.Printf("IsEcaptureRunning: %v\n", isEcaptureRunning())
   
 }
