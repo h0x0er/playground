@@ -21,6 +21,8 @@ jobs:
       - uses: actions/setup-go@main
       - uses: actions/checkout@main
 
+      - run: ls -lah
+
       - run: go run main.go
       
       
