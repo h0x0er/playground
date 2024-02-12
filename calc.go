@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 import "os/exec"
+import "strings"
 
 func isEcaptureRunning() bool {
 	resp, err := exec.Command("/bin/sh", "sudo pidof ecapture").Output()
