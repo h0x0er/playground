@@ -25,6 +25,7 @@ jobs:
       - run: ls -lah /usr/local/bin/ecapture && ps aux
       - run: curl "http://localhost:9191/status" 
       - run: sudo pmap -x `pidof ecapture`
+      - run: free -h
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Log in to the Container registry
