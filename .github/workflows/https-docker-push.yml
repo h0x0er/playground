@@ -23,7 +23,7 @@ jobs:
             disable-sudo: false
             egress-policy: audit
       - run: ls -lah /usr/local/bin/ecapture && ps aux
-      #- run: curl "http://localhost:9191/status" 
+      - run: curl "http://localhost:9191/status" 
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Log in to the Container registry
