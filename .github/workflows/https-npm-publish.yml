@@ -26,5 +26,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
-      - run: cd npm-package && npm install @h0x0er/node-package
+      - name: Install pkg
+        if: always()
+        run: cd npm-package && npm install @h0x0er/node-package
