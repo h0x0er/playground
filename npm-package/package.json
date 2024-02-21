@@ -1,0 +1,20 @@
+{
+    "name": "@h0x0er/hello-world",
+    "version": "0.0.1",
+    "description": "a simple hello world",
+    "main": "app.js",
+    "homepage": "https://github.com/h0x0er/playground",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/h0x0er/playground.git",
+      "directory": "npm-package"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+      },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "preinstall": "node compile.js"
+    },
+    "license": "Apache-2.0"
+  }
