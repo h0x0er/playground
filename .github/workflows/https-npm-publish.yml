@@ -28,7 +28,5 @@ jobs:
 
       - name: Install pkg
         if: always()
-        run: cd npm-package && npm install @h0x0er/node-package
-
-      - run: cd npm-package && npm install @h0x0er/hello-world
+        run: cd npm-package && npm install @h0x0er/hello-world
 
