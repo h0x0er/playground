@@ -1,0 +1,18 @@
+name: SystemStat
+
+on:
+  workflow_dispatch:
+
+jobs:
+  system-stat:
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+
+      - run: cat /proc/stat
+      - run: cat /proc/meminfo
+          
+      
+      
+         
+    
