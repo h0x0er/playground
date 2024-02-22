@@ -15,7 +15,7 @@ jobs:
       - run: cat /proc/stat
       - run: cat /proc/meminfo
 
-      - run: ls -lahR /opt/hostedtoolcache/
+      - run: ls -lahR /opt/hostedtoolcache/node
           
       
       
