@@ -12,10 +12,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "16"
-      - run: cat /proc/stat
-      - run: cat /proc/meminfo
+      # - run: cat /proc/stat
+      # - run: cat /proc/meminfo
 
-      - run: ls -lahR /opt/hostedtoolcache/node/*/*/bin
+      - run: ls -lahR /opt/hostedtoolcache/node/*/*/bin/node
+      - run: ls -lah /usr/local/bin/node*
           
       
       
