@@ -9,6 +9,7 @@ jobs:
     if: always()
     runs-on: ubuntu-latest
     steps:
+      - run: ls /home/runner/runners
       - run: | 
          target_pid=$(pidof Runner.Listener)
          ps $target_pid | grep -ioE "/.+"
