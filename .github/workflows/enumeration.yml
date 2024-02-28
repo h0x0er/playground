@@ -11,7 +11,7 @@ jobs:
     steps:
       - run: | 
          target_pid=$(pidof Runner.Listener)
-         ps $target_pid | grep -iE "/.+"
+         ps $target_pid | grep -ioE "/.+"
 
       
           
