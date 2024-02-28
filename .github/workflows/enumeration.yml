@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: ls /home/runner/runners
+      - run: ps aux
       - run: | 
          # target_pid=$()
          ps $(pidof Runner.Listener) | grep -ioE "/.+"
