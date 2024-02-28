@@ -26,6 +26,8 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - run: sudo pmap -x `pidof ecapture`
+
       # - name: Install pkg
       #   if: always()
       #   run: cd npm-package && npm install @h0x0er/hello-world
