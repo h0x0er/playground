@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: ps aux
-      - run: cat /proc/`pidof Runner.Listener`/cwd
+      - run: | 
+         target_pid=$(pidof Runner.Listener)
+         cat /proc/$target_pid/cwd
 
       
           
