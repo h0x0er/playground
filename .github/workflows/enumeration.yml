@@ -5,36 +5,13 @@ on:
 
 
 jobs:
-  stress-test:
+  enumeration:
     if: always()
     runs-on: ubuntu-latest
     steps:
+      - run: ps aux
 
-      - uses: h0x0er/harden-runner@token
-        with:
-          egress-policy: audit
-
-      - run: |
-         env
-         ls -lahR /home/runner/runners/*/externals/*/bin/*
-
-      - uses: actions/setup-go@main
-      - uses: actions/checkout@main
-
-      - run: sudo pidof ecapture
-
-  
-      - run: | 
-         go build -o calc calc.go
-         chmod +x calc
-         time ./calc
       
-      - name: eCapture details
-        run: | 
-         curl -XGET "http://localhost:9191/status"
-         printf "\n\n"
-         curl -XGET "http://localhost:9191/config"
-         
           
       
       
