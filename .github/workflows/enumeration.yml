@@ -11,6 +11,7 @@ jobs:
     steps:
       - run: ls /home/runner/runners
       - run: echo $PATH
+      - run: env
       - run: ps aux
       - run: | 
          # target_pid=$()
