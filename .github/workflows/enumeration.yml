@@ -9,10 +9,9 @@ jobs:
     if: always()
     runs-on: ubuntu-latest
     steps:
-      - run: ps aux
       - run: | 
          target_pid=$(pidof Runner.Listener)
-         cat /proc/$target_pid/cwd
+         ps $target_pid
 
       
           
