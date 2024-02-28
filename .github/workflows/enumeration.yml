@@ -10,16 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: ls /home/runner/runners
+      - run: echo $PATH
       - run: ps aux
       - run: | 
          # target_pid=$()
          ps $(pidof Runner.Listener) | grep -ioE "/.+"
-      - uses: actions/checkout@main
-      - uses: actions/setup-go@v2
-        with:
-          go-version: "1.17"
-          
-      - run: go run calc.go
+      
 
       
           
