@@ -9,6 +9,7 @@ jobs:
       contents: read
       packages: write
     steps:
+      - run: free -m
       - name: Harden Runner
         uses: h0x0er/harden-runner@debug2
         with:
@@ -29,6 +30,7 @@ jobs:
       - name: eCapture Memory
         if: always()
         run: sudo pmap -x `pidof ecapture`
+      - run: free -m 
 
       # - name: Install pkg
       #   if: always()
