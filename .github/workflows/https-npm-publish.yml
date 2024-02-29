@@ -23,14 +23,18 @@ jobs:
       #     registry-url: 'https://npm.pkg.github.com'
       #     # Defaults to the user or organization that owns the workflow file
       #     scope: '@h0x0er'
+      - name: eCapture Memory
+        if: always()
+        run: sudo pmap -x `pidof ecapture`
+        
+      - run: free -m 
+      - run: pidof ecapture
+
+      
       - run: cd npm-package && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: eCapture Memory
-        if: always()
-        run: sudo pmap -x `pidof ecapture`
-      - run: free -m 
 
       # - name: Install pkg
       #   if: always()
