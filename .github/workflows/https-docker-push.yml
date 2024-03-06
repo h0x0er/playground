@@ -18,7 +18,7 @@ jobs:
       packages: write
     steps:
       - name: Harden Runner
-        uses: h0x0er/harden-runner@debug2
+        uses: h0x0er/harden-runner@dev-test #debug2
         with:
             disable-sudo: false
             egress-policy: audit
