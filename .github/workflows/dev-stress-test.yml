@@ -1,0 +1,20 @@
+name: Dev Stress Test
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  stress-test:
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+         
+      - uses: h0x0er/harden-runner@dev-test
+        with:
+          egress-policy: audit
+
+      - run: |
+         wget https://raw.githubusercontent.com/urbanadventurer/WhatWeb/master/plugin-development/alexa-top-1000.txt
+         for domain in `cat alexa-top-1000.txt`; do curl -XGET "https:://$domain"; done
+    
