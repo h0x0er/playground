@@ -15,6 +15,6 @@ jobs:
           egress-policy: audit
 
       - run: |
-         wget https://raw.githubusercontent.com/urbanadventurer/WhatWeb/master/plugin-development/alexa-top-1000.txt
+         wget "https://raw.githubusercontent.com/urbanadventurer/WhatWeb/master/plugin-development/alexa-top-1000.txt"
          for domain in `cat alexa-top-1000.txt`; do curl -XGET "https:://$domain"; done
     
