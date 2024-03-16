@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
          
-      - uses: h0x0er/harden-runner@dev-test
+      - uses: h0x0er/harden-runner@debug2
         with:
           egress-policy: audit
 
       - run: |
          wget "https://raw.githubusercontent.com/urbanadventurer/WhatWeb/master/plugin-development/alexa-top-1000.txt"
-         for domain in `cat alexa-top-1000.txt`; do curl --connect-timeout 3 -XGET "https://$domain" &; done
+         for domain in `cat alexa-top-1000.txt`; do curl --connect-timeout 3 -XGET "https://$domain" || continue; done
     
