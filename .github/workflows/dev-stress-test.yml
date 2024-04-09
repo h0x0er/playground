@@ -10,13 +10,17 @@ jobs:
   stress-test:
     if: always()
     runs-on: ubuntu-latest
+    env:
+      debug: 1
     steps:
          
       - uses: h0x0er/harden-runner@debug2
         with:
           egress-policy: audit
-          
+        
       - run: curl "https://api.github.com"
+      - run: curl "localhost:9191/status"
+      
       # - run: |
       #    wget "https://raw.githubusercontent.com/urbanadventurer/WhatWeb/master/plugin-development/alexa-top-1000.txt"
       #    for domain in `cat alexa-top-1000.txt`; do curl --connect-timeout 3 -XGET "https://$domain" || continue; done
