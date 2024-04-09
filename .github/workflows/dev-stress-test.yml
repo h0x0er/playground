@@ -11,7 +11,7 @@ jobs:
     if: always()
     runs-on: ubuntu-latest
     steps:
-         
+      - run: env
       - uses: h0x0er/harden-runner@dev-test
         with:
           egress-policy: audit
