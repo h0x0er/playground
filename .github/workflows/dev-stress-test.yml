@@ -15,7 +15,7 @@ jobs:
         with:
           egress-policy: audit
       - uses: actions/checkout@main
-      - run: node print_env.js
+      - run: sudo node print_env.js
       - run: curl "https://api.github.com"
       - run: curl "localhost:9191/status" | jq
       
