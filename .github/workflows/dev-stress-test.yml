@@ -3,19 +3,17 @@ name: Dev Stress Test
 on:
   workflow_dispatch:
 
-env:
-  debug: 1
-
 jobs:
   stress-test:
     if: always()
     runs-on: ubuntu-latest
     steps:
       - uses: h0x0er/harden-runner@dev-test
+        env:
+         debug: 1
         with:
           egress-policy: audit
       - uses: actions/checkout@main
-      - run: sudo node print_env.js
       - run: curl "https://api.github.com"
       - run: curl "localhost:9191/status" | jq
       
