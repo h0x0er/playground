@@ -17,9 +17,8 @@ jobs:
       - uses: h0x0er/harden-runner@debug2
         with:
           egress-policy: audit
-      - run: env
       - run: curl "https://api.github.com"
-      - run: curl "localhost:9191/status"
+      - run: curl "localhost:9191/status" | jq
       
       
       # - run: |
