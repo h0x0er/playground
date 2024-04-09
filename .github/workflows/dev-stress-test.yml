@@ -10,11 +10,9 @@ jobs:
   stress-test:
     if: always()
     runs-on: ubuntu-latest
-    env:
-      debug: 1
     steps:
          
-      - uses: h0x0er/harden-runner@debug2
+      - uses: h0x0er/harden-runner@dev-test
         with:
           egress-policy: audit
       - run: curl "https://api.github.com"
