@@ -16,6 +16,7 @@ jobs:
       - run: curl "localhost:9191/status" | jq
       - run: curl "localhost:9191/tls?lib=/usr/bin/ls"
       - run: curl "localhost:9191/tls?lib=/usr/bin/xyz"
+      - run: sudo rm /usr/local/bin/node
       
       
       
