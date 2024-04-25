@@ -1,0 +1,22 @@
+name: INT B
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  enumeration:
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: h0x0er/harden-runner@intb
+        with:
+         egress-policy: audit
+      
+
+      
+          
+      
+      
+         
+    
