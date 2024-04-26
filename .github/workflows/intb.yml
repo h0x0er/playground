@@ -9,7 +9,7 @@ jobs:
     if: always()
     runs-on: ubuntu-latest
     steps:
-      - uses: h0x0er/harden-runner@intb
+      - uses: step-security/harden-runner@int-sh
         with:
          egress-policy: audit
       
