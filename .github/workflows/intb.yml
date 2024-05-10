@@ -9,9 +9,11 @@ jobs:
     if: always()
     runs-on: ubuntu-latest
     steps:
-      - uses: h0x0er/harden-runner@debug2
+      - uses: h0x0er/harden-runner@int #debug2
         with:
          egress-policy: audit
+
+      - uses: actions/checkout@main
       
 
       
