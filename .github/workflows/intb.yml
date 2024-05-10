@@ -14,6 +14,8 @@ jobs:
          egress-policy: audit
 
       - uses: actions/checkout@main
+      - run: echo "test" >> test.txt
+      - run: echo "modification" >> test.txt
       
 
       
