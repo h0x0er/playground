@@ -3,7 +3,6 @@ name: INT B
 on:
   workflow_dispatch:
 
-
 jobs:
   enumeration:
     if: always()
@@ -11,11 +10,9 @@ jobs:
     steps:
       - uses: h0x0er/harden-runner@int #debug2
         with:
-         egress-policy: audit
+         egress-policy: block
 
-      - uses: actions/checkout@main
-      - run: echo "test" >> test.txt
-      - run: echo "modification" >> test.txt
+      - run: curl https://google.com
       
 
       
