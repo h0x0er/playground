@@ -12,7 +12,7 @@ jobs:
         with:
          egress-policy: audit
 
-      - run: curl https://google.com
+      - run: curl https://api.github.com/v1
       
 
       
