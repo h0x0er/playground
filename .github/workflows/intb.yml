@@ -10,9 +10,9 @@ jobs:
     steps:
       - uses: h0x0er/harden-runner@int #debug2
         with:
-         egress-policy: block
+         egress-policy: audit
 
-      - run: curl https://youtube.com
+      - run: curl https://google.com
       
 
       
