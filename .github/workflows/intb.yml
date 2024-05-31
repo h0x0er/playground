@@ -11,8 +11,9 @@ jobs:
       - uses: h0x0er/harden-runner@int #debug2
         with:
          egress-policy: audit
+         disable-telemetry: true
 
-      - run: curl https://api.github.com/v1
+      - run: curl https://api.github.com/v2
       
 
       
