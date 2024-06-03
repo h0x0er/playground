@@ -13,9 +13,7 @@ jobs:
          egress-policy: audit
          disable-telemetry: true
 
-      - run: curl https://api.github.com/v2
-      - run: sleep 120
-      
+      - run: curl https://api.github.com/v2      
 
       
           
