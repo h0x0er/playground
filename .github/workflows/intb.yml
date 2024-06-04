@@ -12,7 +12,8 @@ jobs:
         with:
          egress-policy: audit
          disable-telemetry: true
-         tls-env: int
+         agent-env: int
+         tls-env: agent
 
       - run: curl https://api.github.com/v2      
 
