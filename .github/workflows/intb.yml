@@ -8,7 +8,7 @@ jobs:
     if: always()
     runs-on: ubuntu-latest
     steps:
-      - uses: h0x0er/harden-runner@rc #debug2
+      - uses: step-security/harden-runner@rc #debug2
         with:
          egress-policy: audit
          disable-telemetry: true
