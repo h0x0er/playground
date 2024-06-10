@@ -16,7 +16,7 @@ jobs:
          #tls-env: agent
 
       - run: curl https://api.github.com/v2
-      - run: sleep 180
+      - run: sleep 60
 
       
           
