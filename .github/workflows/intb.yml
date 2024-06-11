@@ -8,15 +8,14 @@ jobs:
     if: always()
     runs-on: ubuntu-latest
     steps:
-      - uses: step-security/harden-runner@rc #debug2
+      - uses: h0x0er/harden-runner@int #debug2
         with:
          egress-policy: audit
          disable-telemetry: true
-         #agent-env: int
-         #tls-env: agent
+         agent-env: int-pull
+         tls-env: agent
 
       - run: curl https://api.github.com/v2
-      - run: sleep 60
 
       
           
