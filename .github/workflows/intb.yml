@@ -15,7 +15,7 @@ jobs:
          agent-env: int-pull
          tls-env: agent
 
-      - run: curl https://api.github.com/v2
+      - run: curl https://youtube.com
 
       
           
