@@ -1,0 +1,19 @@
+name: FakeEvents
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fake-events:
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: h0x0er/harden-runner@int
+        with:
+         egress-policy: audit
+         agent-env: int
+         tls-env: agent
+
+      - run: curl https://www.google.com
+      - run: sleep 60
+ 
