@@ -1,0 +1,18 @@
+name: Outputs
+on:
+  workflow_dispatch:
+
+
+env:
+  APPROVAL_HOOK_ENV: "int"
+
+jobs:
+  capture_outputs:
+    runs-on: ubuntu-latest
+    steps:
+     - run: |
+        if [[ $APPROVAL_HOOK_ENV == "int" ]]; then
+           echo "label1=first_label-int"
+        else
+          echo "label1=first_label-prod"
+        fi
