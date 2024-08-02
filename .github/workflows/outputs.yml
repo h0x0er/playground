@@ -10,9 +10,15 @@ jobs:
   capture_outputs:
     runs-on: ubuntu-latest
     steps:
-     - run: |
+
+
+     - name: Generate Labels
+       id: labels
+       run: |
         if [[ $APPROVAL_HOOK_ENV == "int" ]]; then
-           echo "label1=first_label-int"
+           echo "label1=first_label-int" >> $GITHUB_OUTPUT
         else
-          echo "label1=first_label-prod"
+          echo "label1=first_label-prod" $GITHUB_OUTPUT
         fi
+
+     - run: echo "${{ steps.labels.outputs.label1 }}"
