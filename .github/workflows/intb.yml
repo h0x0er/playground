@@ -8,11 +8,11 @@ jobs:
     if: always()
     runs-on: ubuntu-latest
     steps:
-      - uses: h0x0er/harden-runner@int #debug2
+      - uses: h0x0er/harden-runner@fix/replace-execSync #int #debug2
         with:
          egress-policy: block
-         agent-env: int-pull
-         tls-env: agent
+         # agent-env: int-pull
+         # tls-env: agent
 
       - run: curl https://youtube.com
 
