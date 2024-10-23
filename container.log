@@ -1,0 +1,9 @@
+
+--dind-container
+
+2024/10/22 18:36:58 INFO pyEvent tracerID=host-tracer handler.event="{TableKey:1143406602 TracerID: TracerMode:KUBERNETES Kind: TrafficFlow:EGRESS EgressMode:AUDIT MatchedPolicy:NONE Verdict:ALLOWED Timestamp:2024-10-22 18:36:58.580671861 +0000 UTC m=+141.534731426 L4Proto:17 Exe:isc-net-0000 Pid:39282 Ppid:38930 CgroupID:10314 CgroupName:cri-containerd-0ada01e1fdb87420a3f1f9e5fb1bac6d34f08d891cc882013dcb10e85dede3c1.scope SrcIP:10.0.39.68 SrcPort:50176 DstIP:172.20.0.10 DstPort:53 DNSId:0 DomainName:pypi.org. QuestionType: Answers:[] PodName:step-security-experiments-arc-repo-1-fmfvc-n9vhr Namespace:hxxqhaxvcd}"
+
+
+--child-of-dind
+
+2024/10/22 18:40:01 INFO pyEvent tracerID=host-tracer handler.event="{TableKey:33558956 TracerID: TracerMode:KUBERNETES Kind: TrafficFlow:EGRESS EgressMode:AUDIT MatchedPolicy:NONE Verdict:ALLOWED Timestamp:2024-10-22 18:40:01.097932071 +0000 UTC m=+324.051991633 L4Proto:17 Exe:isc-net-0000 Pid:40437 Ppid:40294 CgroupID:10524 CgroupName:1aa190460a0f5b6ae8d56b0176df57b68385e009e1d20efe76782c698412185e SrcIP:172.17.0.2 SrcPort:56078 DstIP:172.20.0.10 DstPort:53 DNSId:0 DomainName:pypi.org. QuestionType: Answers:[] PodName: Namespace:}"
