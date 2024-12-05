@@ -20,9 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: install eks
-        if: ${{ inputs.EKS && !(inputs.Vanilla) }}
+        if: ${{ inputs.EKS && (!inputs.Vanilla) }}
         run: echo "installing eks"
 
       - name: vanilla true
-        if: ${{ inputs.Vanilla) }}
+        if: ${{ inputs.Vanilla }}
         run: echo "vanilla cluster"
