@@ -1,0 +1,28 @@
+name: DispatchTest
+on:
+  workflow_dispatch:
+    inputs:
+      Vanilla:
+        required: true
+        type: boolean
+        default: false
+      EKS:
+        required: true
+        type: boolean
+        default: false
+
+
+permissions:
+  contents: read
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install eks
+        if: ${{ inputs.EKS && !(inputs.Vanilla) }}
+        run: echo "installing eks"
+
+      - name: vanilla true
+        if: ${{ inputs.Vanilla) }}
+        run: echo "vanilla cluster"
