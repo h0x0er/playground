@@ -12,7 +12,7 @@ jobs:
     steps:
     
       - name: Harden Runner
-        uses: step-security/harden-runner@v1.5.0
+        uses: step-security/harden-runner@2e205a28d0e1da00c5f53b161f4067b052c61f34
         
       - name: Checkout code
         uses: actions/checkout@v3
