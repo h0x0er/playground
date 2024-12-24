@@ -1,0 +1,24 @@
+name: Container Action With HR
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  run-in-container:
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:latest 
+    steps:
+    
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2
+        
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Install kubectl
+        run: |
+          apt-get update && apt-get install -y curl
+          curl google.com
+         
