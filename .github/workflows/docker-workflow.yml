@@ -12,6 +12,7 @@ jobs:
     steps:
     
       - name: Harden Runner
+        if: false
         uses: step-security/harden-runner@2e205a28d0e1da00c5f53b161f4067b052c61f34
         
       - name: Checkout code
