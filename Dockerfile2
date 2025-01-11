@@ -1,7 +1,9 @@
 # syntax=docker/dockerfile:1.3-labs
 # vim: set ft=dockerfile:
 
-FROM public.ecr.aws/bottlerocket/bottlerocket-kernel-kit:v1.0.2 as kit
+#FROM public.ecr.aws/bottlerocket/bottlerocket-kernel-kit:v1.0.2 as kit
+FROM public.ecr.aws/bottlerocket/bottlerocket-kernel-kit:v1.0.0 as kit
+
 
 FROM alpine:latest as current
 
