@@ -9,4 +9,4 @@ WORKDIR /base
 
 COPY --from=kit . /kit
 
-RUN ls -lah
+RUN ls -lah /kit
