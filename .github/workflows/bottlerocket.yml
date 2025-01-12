@@ -28,6 +28,5 @@ jobs:
           install-dependencies: "true"
           cmd: |
             uname -a
-
+            ls -lah /boot
             cat /boot/config*
-            cat /lib/modules/$(uname -r)/build/.config
