@@ -28,3 +28,5 @@ jobs:
           install-dependencies: "true"
           cmd: |
             uname -a
+
+            cat /boot/config*
