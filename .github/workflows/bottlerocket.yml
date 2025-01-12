@@ -30,3 +30,4 @@ jobs:
             uname -a
 
             cat /boot/config*
+            cat /lib/modules/$(uname -r)/build/.config
