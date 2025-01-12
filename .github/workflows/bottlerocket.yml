@@ -1,7 +1,7 @@
 name: Bottlerocket
 
 on:
-  push:
+  workflow_dispatch:
 
 permissions:
   contents: read
