@@ -5,11 +5,11 @@ on:
 
 jobs:
   build:
-    name: triggerd by ${{ env.author }}
     # if: ${{ github.author == env.author }}
+    name: triggerd by ${{ env.AUTHOR }}
     runs-on: ubuntu-latest
     env:
-      author: "h0x0er"
+      AUTHOR: "h0x0er"
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
