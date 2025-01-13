@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     # if: ${{ github.author == env.author }}
-    name: "triggerd by ${{ $AUTHOR }}"
+    name: "triggerd by ${{ env.AUTHOR }}"
     runs-on: ubuntu-latest
     env:
       AUTHOR: "h0x0er"
