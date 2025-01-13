@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       JOB_VARIABLE: JOB
-    if: ${{ env.WORKFLOW_VARIABLE == 'WORKFLOW' }}
+    if: ${{ github.event.author == 'tango' }}
     steps:
       - name: Run Commands with various variables
         env:
