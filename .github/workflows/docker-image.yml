@@ -6,7 +6,7 @@ env:
   author: "h0x0er"
 jobs:
   build:
-    if: github.author == ${{ env.author }}
+    if: github.author == $author
     runs-on: ubuntu-latest
 
     steps:
