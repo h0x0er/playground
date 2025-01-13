@@ -11,13 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       JOB_VARIABLE: JOB
-    if: ${{ github.event.author == 'tango' }}
+    # if: ${{ github.event.author == 'tango' }}
     steps:
-      - name: Run Commands with various variables
-        env:
-          STEP_VARIABLE: STEP
-        run: |
-          echo "Hello World"
-          echo "This is the $WORKFLOW_VARIABLE environment variable"
-          echo "This is the $JOB_VARIABLE environment variable"
-          echo "This is the $STEP_VARIABLE environment variable"
+      - uses: actions/checkout@main
+      - run: |
+          git status -m | grep "test"
