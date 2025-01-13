@@ -1,16 +1,15 @@
 name: Env Access
 on:
-  workflow_dispatch
+  workflow_dispatch:
 
+env:
+  AUTHOR: jatin
 
 jobs:
   build:
     # if: ${{ github.author == env.author }}
     name: "triggerd by ${{ env.AUTHOR }}"
     runs-on: ubuntu-latest
-    env:
-      AUTHOR: "h0x0er"
     steps:
-    - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: ls
