@@ -9,7 +9,6 @@ env:
 jobs:
   linux_job:
     runs-on: ubuntu-latest
-    env:
-      mascot: Tux
+    name: "greet ${{ env.mascot }}" 
     steps:
       - run: echo 'Hi ${{ env.mascot }}'  # Hi Tux
