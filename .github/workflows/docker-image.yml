@@ -3,13 +3,13 @@ on:
   workflow_dispatch:
 
 env:
-  AUTHOR: jatin
+  mascot: Mona
+  super_duper_var: totally_awesome
 
 jobs:
-  build:
-    # if: ${{ github.author == env.author }}
-    name: "triggerd by ${{ env.AUTHOR }}"
+  linux_job:
     runs-on: ubuntu-latest
+    env:
+      mascot: Tux
     steps:
-    - name: Build the Docker image
-      run: ls
+      - run: echo 'Hi ${{ env.mascot }}'  # Hi Tux
