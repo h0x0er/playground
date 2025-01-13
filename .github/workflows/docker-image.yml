@@ -16,4 +16,6 @@ jobs:
       - uses: actions/checkout@main
       - run: |
           changes=$(git status -s | grep "test" || echo "")
-          echo $changes
+          if [ -z $changes ]; then
+            echo "no changes"
+          fi
