@@ -2,13 +2,13 @@ name: Env Access
 on:
   workflow_dispatch
 
-env:
-  author: "h0x0er"
+
 jobs:
   build:
-    if: github.author == $author
+    if: github.author == ${{ env.author }}
     runs-on: ubuntu-latest
-
+    env:
+      author: "h0x0er"
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
