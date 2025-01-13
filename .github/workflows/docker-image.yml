@@ -3,12 +3,21 @@ on:
   workflow_dispatch:
 
 env:
-  mascot: Mona
-  super_duper_var: totally_awesome
+  WORKFLOW_VARIABLE: WORKFLOW
 
 jobs:
-  linux_job:
+
+  job1:
     runs-on: ubuntu-latest
-    name: "greet ${{ env.mascot }}" 
+    env:
+      JOB_VARIABLE: JOB
     steps:
-      - run: echo 'Hi ${{ env.mascot }}'  # Hi Tux
+      - name: Run Commands with various variables
+        if: ${{ env.WORKFLOW_VARIABLE == 'WORKFLOW' }}
+        env:
+          STEP_VARIABLE: STEP
+        run: |
+          echo "Hello World"
+          echo "This is the $WORKFLOW_VARIABLE environment variable"
+          echo "This is the $JOB_VARIABLE environment variable"
+          echo "This is the $STEP_VARIABLE environment variable"
