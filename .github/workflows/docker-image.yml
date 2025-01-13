@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    if: github.author == ${{ env.author }}
+    if: ${{ github.author == env.author }}
     runs-on: ubuntu-latest
     env:
       author: "h0x0er"
