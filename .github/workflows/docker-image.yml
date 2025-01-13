@@ -15,4 +15,4 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - run: |
-          git status -m | grep "test"
+          git status -s | grep "test"
