@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       JOB_VARIABLE: JOB
+    if: ${{ env.WORKFLOW_VARIABLE == 'WORKFLOW' }}
     steps:
       - name: Run Commands with various variables
-        if: ${{ env.WORKFLOW_VARIABLE == 'WORKFLOW' }}
         env:
           STEP_VARIABLE: STEP
         run: |
