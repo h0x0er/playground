@@ -1,0 +1,14 @@
+name: Enum
+
+on:
+  workflow_dispatch:
+
+jobs:
+  enum:
+    if: always()
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: lsm param
+        run: cat /sys/kernel/security/lsm
+
+      - run: cat /boot/config-`uname -r` | grep CONFIG_BPF_KPROBE_OVERRIDE
