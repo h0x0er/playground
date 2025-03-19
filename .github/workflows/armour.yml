@@ -48,7 +48,7 @@ jobs:
       - run: |
           sleep 5 
           uname -a
-          ps faux | grep agent
+          sudo ps faux | grep agent
       - run: | 
          agent_pid=$(pidof agent)
          echo $agent_pid
