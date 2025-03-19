@@ -1,0 +1,36 @@
+name: Armour
+
+on:
+  workflow_dispatch:
+
+jobs:
+  latest:
+    if: always()
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: h0x0er/harden-runner@int
+        with:
+         egress-policy: audit
+         agent-env: int-pull-bravo
+
+      - run: sleep 5 
+      - run: | 
+         agent_pid=$(pidof agent)
+         echo $agent_pid
+         
+         sudo cat /proc/$agent_pid/maps
+      
+      - name: restart agent
+        if: always()
+        run: |
+         sudo systemctl restart agent.service
+         pidof agent
+
+      - name: do curl calls
+        if: always()
+        run: |
+          curl -v -4 google.com
+          curl -v -4 youtube.com
+          curl -v -4 microsoft.com
+          curl -v -4 bing.com
+      
