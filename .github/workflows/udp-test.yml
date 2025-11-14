@@ -20,6 +20,6 @@ jobs:
         uses: step-security/harden-runner@v2 # v2.3.0
         with:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
-      - run: nc 1.1.1.1 53
+      - run: nc -u 1.1.1.1 53
           
     
