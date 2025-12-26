@@ -1,0 +1,26 @@
+name: Test eBPF Load
+
+on:
+  workflow_dispatch:
+
+jobs:
+  bpf-test:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Install bpftool
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y linux-tools-common linux-tools-generic
+
+      - name: Download sample eBPF object
+        run: |
+          mkdir -p bpf
+          curl -L \
+            https://github.com/h0x0er/playground/releases/download/v0.0.3/main.bpf.o \
+            -o bpf/main.bpf.o
+
+      - name: Try loading eBPF program (expected to fail on GitHub runner)
+        run: |
+          sudo bpftool prog load bpf/main.bpf.o /sys/fs/bpf/test_prog
