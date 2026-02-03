@@ -1,0 +1,21 @@
+name: MacOS enum
+
+on:
+  workflow_dispatch:
+
+        
+jobs:
+  enum:
+    runs-on: macos-14
+    steps:
+           
+      - uses: h0x0er/harden-runner@jatin/winmac
+        with:
+          egress-policy: audit
+
+
+      - uses: actions/checkout@main
+      - run: curl https://www.google.com
+      - run: dig bing.com
+      - run: dig youtube.com
+      - run: curl http://yahoo.com
